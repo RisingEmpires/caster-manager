@@ -16,8 +16,10 @@ export function CasterManager() {
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<input type="text" placeholder="Caster1" name="caster1" defaultValue={caster1}/>
-				<input type="text" placeholder="Caster2" name="caster2" defaultValue={caster2}/>
+				<label>Caster 1</label>
+				<input type="text" placeholder="Caster1" name="caster1" defaultValue={caster1} />
+				<label>Caster 2</label>
+				<input type="text" placeholder="Caster2" name="caster2" defaultValue={caster2} />
 
 				<input type="submit" />
 			</form>
