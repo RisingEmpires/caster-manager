@@ -24,7 +24,7 @@
       {
         "name": "caster-manager",
         "title": "Caster Manager",
-        "width": 4,
+        "width": 3,
         "file": "caster-manager.html",
         "headerColor": "#525F78"
       }
