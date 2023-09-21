@@ -45,7 +45,7 @@ export function Index() {
 			}
 			{show_observer ?
 				<div className='observer text-3xl'>
-					<h1>{observer}</h1>
+					<h1>Observer: {observer}</h1>
 				</div>
 				: <></>}
 
