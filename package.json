@@ -71,7 +71,7 @@
     "use-nodecg": "^0.4.1-2"
   },
   "devDependencies": {
-    "@nodecg/types": "^2.0.0",
+    "@nodecg/types": "^2.1.11",
     "@parcel/config-default": "*",
     "@parcel/core": "*",
     "@parcel/reporter-cli": "*",

@@ -28,9 +28,11 @@ export function CasterManager() {
 		set_caster2_social(event.target.caster2Social.value)
 		set_observer_social(event.target.observerSocial.value)
 
-		set_show_caster1_social(event.target.show_caster1_social.value)
-		set_show_caster2_social(event.target.show_caster2_social.value)
-		set_show_observer_social(event.target.show_observer_social.value)
+		set_show_observer(event.target.show_observer.checked)
+
+		set_show_caster1_social(event.target.show_caster1_social.checked)
+		set_show_caster2_social(event.target.show_caster2_social.checked)
+		set_show_observer_social(event.target.show_observer_social.checked)
 	}
 
 	const swapCasters = (event: any) => {
@@ -41,15 +43,25 @@ export function CasterManager() {
 		set_caster2(temp)
 	}
 
+	//, show_caster2_social, show_observer, show_observer_social
+	
+	//Currently not working, waiting for assistance
+	//@ts-ignore
+	//waitForReplicants([show_caster1_social]).then(() => {
+	//	console.log("Replicants avaliabe")
+	//}).catch((error) => {
+	//	console.log(error)
+	//})
+
 	return (
-		<>
+		<> 
 			<form onSubmit={handleSubmit} className='p-4'>
 				<label>Caster 1</label>
 				<input type="text" placeholder="Caster1" name="caster1" defaultValue={caster1} />
 
 				<label>Caster 1 Social Media</label>
 				<div className='flex flex-row'>
-					<input className="w-8 mr-4 caster1" type="checkbox" name="show_caster1_social" checked={show_caster1_social} onChange={(() => set_show_caster1_social(!show_caster1_social))} />
+					<input className="w-8 mr-4 caster1" type="checkbox" name="show_caster1_social" defaultChecked={show_caster1_social} />
 					<ReactTooltip
 						anchorSelect=".caster1"
 						id="tooltip1"
@@ -84,7 +96,7 @@ export function CasterManager() {
 				
 				<label>Caster 2 Social Media</label>
 				<div className='flex flex-row'>
-					<input className="w-8 mr-4 caster2" type="checkbox" name="show_caster2_social" checked={show_caster2_social} onChange={(() => set_show_caster2_social(!show_caster2_social))} />
+					<input className="w-8 mr-4 caster2" type="checkbox" name="show_caster2_social" defaultChecked={show_caster2_social}/>
 					<input type="text" placeholder="Caster2Social" name="caster2Social" defaultValue={caster2_social} />
 					<ReactTooltip
 						anchorSelect=".caster2"
@@ -96,7 +108,9 @@ export function CasterManager() {
 
 				<label>Observer</label>
 				<div className='flex flex-row'>
-					<input className="w-8 mr-4 observerName" type="checkbox" name="show_observer" checked={show_observer} onChange={(() => set_show_observer(!show_observer))} />
+					<input className="w-8 mr-4 observerName" type="checkbox" name="show_observer" defaultChecked={show_observer}
+					//onChange={(() => set_show_observer(!show_observer))} 
+					/>
 					<input type="text" placeholder="Observer" name="observer" defaultValue={observer} />
 					<ReactTooltip
 						anchorSelect=".observerName"
@@ -106,7 +120,7 @@ export function CasterManager() {
 					/>
 				</div>
 				<div className='flex flex-row'>
-					<input className="w-8 mr-4 observer" type="checkbox" name="show_observer_social" checked={show_observer_social} onChange={(() => set_show_observer_social(!show_observer_social))} />
+					<input className="w-8 mr-4 observer" type="checkbox" name="show_observer_social" defaultChecked={show_observer_social}/>
 					<input type="text" placeholder="ObserverSocial" name="observerSocial" defaultValue={observer_social} />
 					<ReactTooltip
 						anchorSelect=".observer"
@@ -116,7 +130,7 @@ export function CasterManager() {
 					/>
 				</div>
 
-				<input type="submit" value={'Update Caster Name'} />
+				<input type="submit" value={'Update Graphics'} />
 			</form>
 		</>
 	)
