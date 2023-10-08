@@ -43,16 +43,6 @@ export function CasterManager() {
 		set_caster2(temp)
 	}
 
-	//, show_caster2_social, show_observer, show_observer_social
-	
-	//Currently not working, waiting for assistance
-	//@ts-ignore
-	//waitForReplicants([show_caster1_social]).then(() => {
-	//	console.log("Replicants avaliabe")
-	//}).catch((error) => {
-	//	console.log(error)
-	//})
-
 	return (
 		<> 
 			<form onSubmit={handleSubmit} className='p-4'>
